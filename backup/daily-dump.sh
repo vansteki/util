@@ -8,4 +8,4 @@ FILENAME=$(date +"%Y%m%d-%R".sql)
 LO="/var/www/dump/"
 EXT=".xz"
 mysqldump -q -Y -u [user] -p[pass] word_combine > $LO$FILENAME && xz -9 $LO$FILENAME
-s3cmd put $LO$FILENAME$EXT s3://case.thu/im/edas/cronjob/$FILENAME$EXT
+s3cmd put $LO$FILENAME$EXT s3://[bucket-path]/$FILENAME$EXT
